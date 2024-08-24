@@ -1,0 +1,50 @@
+package com.example.moart
+
+class Common {
+    companion object {
+        val miniCategories = listOf(
+            MiniCategory(isSelected = false, title = "All"),
+            MiniCategory(isSelected = false, title = "Featured"),
+            MiniCategory(isSelected = false, title = "Trending Sound"),
+            MiniCategory(isSelected = false, title = "Beauty"),
+            MiniCategory(isSelected = false, title = "Birthday"),
+            MiniCategory(isSelected = false, title = "Blank"),
+            MiniCategory(isSelected = false, title = "Business"),
+            MiniCategory(isSelected = false, title = "Classic"),
+            MiniCategory(isSelected = false, title = "Digital"),
+            MiniCategory(isSelected = false, title = "Film"),
+            MiniCategory(isSelected = false, title = "Fitness"),
+            MiniCategory(isSelected = false, title = "Food"),
+            MiniCategory(isSelected = false, title = "Landscape"),
+            MiniCategory(isSelected = false, title = "Marketing"),
+            MiniCategory(isSelected = false, title = "Minimal"),
+            MiniCategory(isSelected = false, title = "Minimalist"),
+            MiniCategory(isSelected = false, title = "Mirror"),
+            MiniCategory(isSelected = false, title = "News"),
+            MiniCategory(isSelected = false, title = "Photography"),
+            MiniCategory(isSelected = false, title = "RealEstate"),
+            MiniCategory(isSelected = false, title = "Storytelling"),
+            MiniCategory(isSelected = false, title = "Audio"),
+            MiniCategory(isSelected = false, title = "Christmas"),
+            MiniCategory(isSelected = false, title = "Cinema"),
+            MiniCategory(isSelected = false, title = "Fashion"),
+            MiniCategory(isSelected = false, title = "Music Slide"),
+            MiniCategory(isSelected = false, title = "New Year"),
+            MiniCategory(isSelected = false, title = "Opener"),
+            MiniCategory(isSelected = false, title = "Paper Transitions"),
+            MiniCategory(isSelected = false, title = "Reel Transitions"),
+            MiniCategory(isSelected = false, title = "ScrapBooking"),
+            MiniCategory(isSelected = false, title = "Shop"),
+            MiniCategory(isSelected = false, title = "ShowLight"),
+            MiniCategory(isSelected = false, title = "Social"),
+            MiniCategory(isSelected = false, title = "Sport"),
+            MiniCategory(isSelected = false, title = "Typography"),
+            MiniCategory(isSelected = false, title = "Glitch"),
+            MiniCategory(isSelected = false, title = "Party"),
+            MiniCategory(isSelected = false, title = "Baby"),
+            MiniCategory(isSelected = false, title = "Travel"),
+            MiniCategory(isSelected = false, title = "Mother's Day"),
+            MiniCategory(isSelected = false, title = "Fitness & Yoga")
+        )
+    }
+}

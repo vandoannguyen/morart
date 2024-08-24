@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">MoArt</string>
+    <string name="create_animated_social_content_for_your_brand">Tạo nội dung cho thương hiệu của bạn</string>
+    <string name="create_tons_of_expressive_text_effects">Tạo hàng nghìn hiệu ứng văn bản nghệ thuật</string>
+    <string name="choose_from_hundreds_of_animated_templates">Chọn từ hàng trăm mẫu</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">Trang Chủ</string>
+    <string name="my_projects">Dự án của tôi</string>
+    <string name="settings">Cài đặt</string>
+    <string name="manage_custom_fonts_logo_and_more">Quản lý phông chữ tùy chỉnh, logo và nhiều hơn thế.</string>
+    <string name="unlock_all_editing">Mở khóa tất cả chỉnh sửa</string>
+    <string name="try_plus">Thử Cao cấ</string>
+    <string name="language">Ngôn ngữ</string>
+    <string name="policy">Chính sách</string>
+    <string name="rate_app">Đánh giá ứng dụng</string>
+    <string name="feedback">Phản hồi</string>
+    <string name="share_app">Chia sẻ ứng dụng</string>
+    <string name="brand_kit">Bộ thương hiệu</string>
+    <string name="manage_colors_and_logos">Quản lý màu sắc và logo của bạn</string>
+    <string name="no_data">Không có dữ liệu</string>
+    <string name="my_stories">Câu chuyện của tôi</string>
+    <string name="show_all">Xem tất cả</string>
+    <string name="get_more_templates">Lấy thêm mẫu</string>
+    <string name="reel">Reel</string>
+    <string name="story">Câu chuyện</string>
+    <string name="tiktok">Tiktok</string>
+    <string name="you_tube">Youtube</string>
+    <string name="facebook">Facebook</string>
+    <string name="choose_a_design">Chọn thiết kế</string>
+    <string name="all">All</string>
+    <string name="page">Page</string>
+    <string name="please_don_t_close_moart_or_lock_your_device">Xin đừng đóng Moart hoặc khóa thiết bị của bạn.</string>
+    <string name="use_template">Sử dụng mẫu</string>
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:icon="@drawable/tab_home"
+        android:enabled="true"
+        android:id="@+id/homeFragment"
+        android:title="@string/home"/>
+    <item
+        android:icon="@drawable/tab_my_project"
+        android:enabled="true"
+        android:id="@+id/myStoriesFragment"
+        android:title="@string/my_projects"/>
+    <item
+        android:icon="@drawable/tab_settings"
+        android:enabled="true"
+        android:id="@+id/settingFragment"
+        android:title="@string/settings"/>
+</menu>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="color_FFF9F6">#FFF9F6</color>
+    <color name="color_D38D5A">#D38D5A</color>
+    <color name="colorTextTabSelected">#000000</color>
+    <color name="color_splash">#fff9f6</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="light_blue_900">#FF01579B</color>
+    <color name="light_blue_A200">#FF40C4FF</color>
+    <color name="light_blue_A400">#FF00B0FF</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="colorTextBlack">#000000</color>
+    <color name="color_F6E9E4">#f6e9e4</color>
+    <color name="color_D16A1D">#d16a1d</color>
+    <color name="color_FFF2EB">#FFF2EB</color>
+    <color name="color_gray">#afb8cf</color>
+    <color name="colorTextTab">#ff7b52</color>
+    <color name="color_333333">#333333</color>
+    <color name="color_E0E0E0">#E0E0E0</color>
+    <color name="color_EFC7B0">#EFC7B0</color>
+    <color name="color_ripple_dialog">#1a151414</color>
+    <color name="focus_text_color">#291C1B</color>
+    <color name="color_8e8888">#8e8888</color>
+</resources>

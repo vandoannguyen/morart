@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:tag="layout/item_category_mini_0"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/_6sdp"
+    android:layout_marginStart="3dp">
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:id="@+id/tvNameCategory"
+        android:background="@drawable/bg_white_20"
+        android:paddingLeft="@dimen/_12sdp"
+        android:paddingTop="@dimen/_8sdp"
+        android:paddingRight="@dimen/_12sdp"
+        android:paddingBottom="@dimen/_8sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="6dp"
+        android:fontFamily="@font/inter_medium"
+        android:layout_marginEnd="8dp"
+        app:drawableStartCompat="@drawable/ic_category_all"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

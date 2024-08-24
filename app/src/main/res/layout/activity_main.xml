@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_splash"
+    android:tag="layout/fragment_main_0">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/tv_title_line"
+        app:layout_constraintStart_toStartOf="@+id/tvTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_19sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:fontFamily="@font/inter_bold"
+        android:gravity="center_vertical"
+        android:includeFontPadding="false"
+        android:text="@string/app_name"
+        android:textColor="@color/colorTextBlack"
+        android:textSize="@dimen/_24sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/layout_try_plus_banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_19sdp"
+        android:layout_marginLeft="@dimen/_19sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginRight="@dimen/_19sdp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+    <!--    <include-->
+    <!--        android:id="@+id/layout_try_plus_banner"-->
+    <!--        android:visibility="gone"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginLeft="@dimen/_19sdp"-->
+    <!--        android:layout_marginTop="@dimen/_16sdp"-->
+    <!--        android:layout_marginRight="@dimen/_19sdp"-->
+    <!--        android:layout_marginHorizontal="@dimen/_19sdp"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/tvTitle"-->
+    <!--        layout="@layout/layout_try_plus"/>-->
+    <com.example.moart.CustomViewPager
+        android:id="@+id/vp_main"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_12sdp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_nav"
+        app:layout_constraintTop_toBottomOf="@+id/layout_try_plus_banner" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_F6E9E4"
+        android:visibility="visible"
+        app:elevation="@dimen/_0dp"
+        app:itemIconTint="@color/bnv_tab_item"
+        app:itemRippleColor="@android:color/transparent"
+        app:itemTextColor="@color/bnv_tab_item"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/nav_menu" />
+</androidx.constraintlayout.widget.ConstraintLayout>

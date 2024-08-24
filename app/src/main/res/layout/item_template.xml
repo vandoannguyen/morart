@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutWrap"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:layout_margin="@dimen/_10sdp"
+    android:tag="layout/item_template_0"
+    app:cardCornerRadius="@dimen/_8sdp"
+    app:cardElevation="@dimen/_1sdp">
+    <ImageView
+        android:id="@+id/templateView"
+        android:scaleType="centerCrop"
+        android:layout_width="match_parent"
+        tools:src="@drawable/img_template_bill4"
+        android:layout_height="match_parent"/>
+    <!--    <com.createstories.mojoo.feature.template.TemplateView-->
+    <!--        android:id="@+id/templateView"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"/>-->
+    <View
+        android:id="@+id/click"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_new"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:src="@drawable/image_new"
+        android:visibility="visible" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_video_template"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:layout_marginEnd="@dimen/_6sdp"
+        android:src="@drawable/ic_video_template" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_is_pro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|top"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:src="@drawable/ic_pro_new" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_reward"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_26sdp"
+        android:src="@drawable/ic_reward_new" />
+<!--        <ViewStub-->
+<!--            android:id="@+id/vsMultiple"-->
+<!--            android:layout="@layout/item_template_multiple"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"/>-->
+<!--        <ViewStub-->
+<!--            android:id="@+id/vsDefault"-->
+<!--            android:layout="@layout/layout_item_template_default"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"/>-->
+</androidx.cardview.widget.CardView>
