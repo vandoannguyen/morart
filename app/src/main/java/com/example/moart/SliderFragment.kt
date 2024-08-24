@@ -9,11 +9,6 @@ import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.example.moart.databinding.FragmentSliderBinding
-
-/**
- * An example full-screen fragment that shows and hides the system UI (i.e.
- * status bar and navigation/system bar) with user interaction.
- */
 class SliderFragment(position: Int) : Fragment() {
     private var position = 0
 

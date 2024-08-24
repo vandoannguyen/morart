@@ -17,7 +17,7 @@ import com.example.moart.databinding.FragmentHomeBinding
 import kotlin.random.Random
 
 
-class HomeFragment : Fragment(), OnDesignSelectedListener, OnTemplateAdapterListener {
+class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     private lateinit var adapterCategory: CategoryTemplateAdapter
     private lateinit var mCategoryMiniAdapter: CategoryMiniAdapter
@@ -69,8 +69,6 @@ class HomeFragment : Fragment(), OnDesignSelectedListener, OnTemplateAdapterList
         binding.rcvCategoryTemplate.setHasFixedSize(true)
         adapterCategory = CategoryTemplateAdapter(
             requireActivity(),
-            this,
-            this,
         ) {
             val intent = Intent(requireActivity(), DetailTemplate::class.java)
             intent.putExtra("icon", it)
@@ -195,23 +193,4 @@ class HomeFragment : Fragment(), OnDesignSelectedListener, OnTemplateAdapterList
             this.mCategoryMiniAdapter.notifyItemChanged(position)
         }
     }
-
-    override fun onDesignSelectedListener(i2: Int, i9: Int, item: DesignItem) {
-    }
-
-    override fun onClickLoadMoreTemplates() {
-    }
-
-    override fun onClickShowAll(str: String?, i2: Int, z9: Boolean) {
-
-    }
-
-    override fun onRepeatAudio() {
-
-    }
-
-    override fun onStopAudio() {
-
-    }
-
 }

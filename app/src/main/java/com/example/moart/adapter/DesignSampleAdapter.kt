@@ -12,7 +12,6 @@ import com.example.moart.databinding.ItemDesignBinding
 class DesignSampleAdapter(
     context: Context,
     private val positionCategory: Int,
-    val mOnDesignItemClickListener: OnDesignSelectedListener
 ) : ListAdapter<DesignItem, RecyclerView.ViewHolder?>(diffCallbackDesignSample) {
     private val height: Int
     private val width: Int
@@ -60,13 +59,6 @@ class DesignSampleAdapter(
             mBinding.getRoot().setPadding(0, 0, 0, 0)
             mBinding.getRoot().requestLayout()
             mBinding.viewBgDesign.requestLayout()
-            mBinding.getRoot().setOnClickListener {
-                mOnDesignItemClickListener.onDesignSelectedListener(
-                    positionCategory,
-                    position,
-                    item
-                )
-            }
         }
     }
 

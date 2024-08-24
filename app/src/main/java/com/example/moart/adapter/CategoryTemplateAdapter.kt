@@ -2,9 +2,7 @@ package com.example.moart.adapter
 
 import TemplateAdapter
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.content.Context
-import android.content.Intent
 import android.os.Parcelable
 import android.util.SparseArray
 import android.view.LayoutInflater
@@ -21,19 +19,18 @@ import com.example.moart.Category
 import com.example.moart.DesignItem
 import com.example.moart.R
 import com.example.moart.databinding.ItemCategoryTemplateBinding
-import java.util.Objects
 
 
-class CategoryTemplateAdapter :
-    ListAdapter<Category, CategoryTemplateAdapter.CategoryTemplateViewHolder?>,
-    OnTemplateAdapterListener, OnDesignSelectedListener {
-    private lateinit var onChooseTemplate: (Int) -> Unit
+class CategoryTemplateAdapter(
+    context: Context,
+    var onChooseTemplate: (Int) -> Unit
+) : ListAdapter<Category, CategoryTemplateAdapter.CategoryTemplateViewHolder?>(
+    diffCallbackTheme
+) {
     private var heightItem: Int = 0
     private var isHasData: Boolean = false
-    var mOnDesignItemClickListener: OnDesignSelectedListener
     private var mRecyclerView: RecyclerView? = null
-    val onTemplateAdapterListener: OnTemplateAdapterListener
-    private val recyclerViewStates: SparseArray<Parcelable?>
+    private val recyclerViewStates: SparseArray<Parcelable?> = SparseArray()
 
     inner class CategoryTemplateViewHolder(itemCategoryTemplateBinding: ItemCategoryTemplateBinding) :
         RecyclerView.ViewHolder(itemCategoryTemplateBinding.getRoot()) {
@@ -49,7 +46,6 @@ class CategoryTemplateAdapter :
                 val findLastVisibleItemPosition: Int
                 super.onScrolled(recyclerView, dx, dy)
                 val categoryTemplateViewHolder = this@CategoryTemplateViewHolder
-                onTemplateAdapterListener.onStopAudio()
                 val linearLayoutManager = recyclerView.layoutManager as LinearLayoutManager?
                 if (linearLayoutManager != null) {
                     findFirstVisibleItemPosition =
@@ -66,40 +62,7 @@ class CategoryTemplateAdapter :
             }
         }
 
-//        /* synthetic */ fun `lambda$bindData$0`() {
-//            checkAnimation(
-//                mRecyclerView, mBinding.rcvTemplate, false, false
-//            )
-//        }
-
-//        /* synthetic */ fun `lambda$bindData$1`(view: View?) {
-//            onTemplateAdapterListener.onClickLoadMoreTemplates()
-//        }
-//
-//        fun `lambda$bindData$2`(i2: Int, bVar: w0.b, view: View?) {
-//            var z9 = false
-//            var index = 0
-//            while (true) {
-//                if (index < currentList[i2].f25636b.size()) {
-//                    if (currentList[i2].f25636b.get(index)
-//                            .getTemplateItem() != null && currentList
-//                            .get(i2).f25636b.get(index).getTemplateItem().isPostType()
-//                    ) {
-//                        z9 = true
-//                        break
-//                    }
-//                    index++
-//                } else {
-//                    break
-//                }
-//            }
-//            onTemplateAdapterListener.onClickShowAll(bVar.f25635a, i2, z9)
-//        }
-
-//        /* synthetic */ fun `lambda$bindData$3`(view: View?) {
-//            onTemplateAdapterListener.onClickLoadMoreTemplates()
-//        }
-
+        @SuppressLint("UseCompatLoadingForDrawables")
         fun bindData(category: Category, position: Int) {
             val context: Context = mBinding.getRoot().context
             if (position > 0) {
@@ -125,7 +88,7 @@ class CategoryTemplateAdapter :
                             position,
                             true,
                         ) { catPosition, position ->
-                            _handleClickTemplate(catPosition, position)
+                            handleClickTemplate(catPosition, position)
                         }
                         (mBinding.rcvTemplate.layoutParams as MarginLayoutParams).height =
                             (context.resources.displayMetrics.widthPixels * 0.55).toInt()
@@ -133,7 +96,7 @@ class CategoryTemplateAdapter :
                         mTemplateAdapter = TemplateAdapter(
                             context, position, false
                         ) { catPosition, position ->
-                            _handleClickTemplate(catPosition, position)
+                            handleClickTemplate(catPosition, position)
                         }
                         (mBinding.rcvTemplate.layoutParams as MarginLayoutParams).height =
                             (context.resources.displayMetrics.widthPixels * 0.8f).toInt()
@@ -154,14 +117,10 @@ class CategoryTemplateAdapter :
                         recyclerViewStates[position]
                     )
                 }
-//                mBinding.rcvTemplate.post(a(this, 11))
                 if (position == currentList.size - 1) {
                     mBinding.tvTurnOnInternet.visibility = View.VISIBLE
                 } else {
                     mBinding.tvTurnOnInternet.visibility = View.GONE
-                }
-                mBinding.tvTurnOnInternet.setOnClickListener {
-                    onTemplateAdapterListener.onClickLoadMoreTemplates()
                 }
                 return
             }
@@ -203,7 +162,7 @@ class CategoryTemplateAdapter :
                 mBinding.tvNameCategory.text = context.getString(R.string.choose_a_design)
                 if (mDesignSampleAdapter == null) {
                     mDesignSampleAdapter = DesignSampleAdapter(
-                        context, position, mOnDesignItemClickListener
+                        context, position,
                     )
                     mBinding.rcvTemplate.setAdapter(mDesignSampleAdapter)
                 }
@@ -226,37 +185,17 @@ class CategoryTemplateAdapter :
         }
     }
 
-    private fun _handleClickTemplate(catPosition: Int, position: Int) {
+    private fun handleClickTemplate(catPosition: Int, position: Int) {
         onChooseTemplate(getItem(catPosition).images[position])
     }
 
-    constructor(
-        context: Context,
-        onTemplateAdapterListener: OnTemplateAdapterListener,
-        mOnDesignItemClickListener: OnDesignSelectedListener,
-        onChooseTemplate: (Int)->Unit
-    ) : super(
-        diffCallbackTheme
-    ) {
-        this.recyclerViewStates = SparseArray()
+    init {
         this.isHasData = false
-        this.onTemplateAdapterListener = onTemplateAdapterListener
-        this.mOnDesignItemClickListener = mOnDesignItemClickListener
-        this.onChooseTemplate = onChooseTemplate
         this.heightItem = (context.resources.displayMetrics.widthPixels * 0.84).toInt()
     }
 
     override fun getItemId(i2: Int): Long {
         return i2.toLong()
-    }
-
-    private fun getTemplateAdapter(recyclerView: RecyclerView, i2: Int): TemplateAdapter? {
-        val categoryTemplateViewHolder =
-            recyclerView.findViewHolderForAdapterPosition(i2) as CategoryTemplateViewHolder?
-        if (categoryTemplateViewHolder != null) {
-            return categoryTemplateViewHolder.templateAdapter
-        }
-        return null
     }
 
     override fun onAttachedToRecyclerView(recyclerView: RecyclerView) {
@@ -286,9 +225,7 @@ class CategoryTemplateAdapter :
         inflate.rcvTemplate.setHasFixedSize(true)
         inflate.rcvTemplate.setLayoutManager(
             LinearLayoutManager(
-                viewGroup.context,
-                RecyclerView.HORIZONTAL,
-                false
+                viewGroup.context, RecyclerView.HORIZONTAL, false
             )
         )
         return CategoryTemplateViewHolder(inflate)
@@ -302,66 +239,8 @@ class CategoryTemplateAdapter :
             )
         }
         categoryTemplateViewHolder.removeAllWhenRecycle()
-        val itemCategoryTemplateBinding: ItemCategoryTemplateBinding =
-            categoryTemplateViewHolder.mBinding
-//        itemCategoryTemplateBinding.unbind()
         super.onViewRecycled(categoryTemplateViewHolder)
     }
-
-    constructor(
-        context: Context,
-        qVar: OnTemplateAdapterListener,
-        gVar: OnDesignSelectedListener,
-        z9: Boolean
-    ) : super(
-        diffCallbackTheme
-    ) {
-        this.recyclerViewStates = SparseArray()
-        this.isHasData = false
-        this.onTemplateAdapterListener = qVar
-        this.mOnDesignItemClickListener = gVar
-        this.heightItem = (context.resources.displayMetrics.widthPixels * 0.84).toInt()
-    }
-
-    override fun getItemViewType(i2: Int): Int {
-        return i2
-    }
-
-    override fun onClickLoadMoreTemplates() {
-
-    }
-
-//    override fun onClickPlayAudio(
-//        template: Template?,
-//        i2: Int,
-//        i9: Int,
-//        templateView: TemplateView?
-//    ) {
-//
-//    }
-
-    override fun onClickShowAll(str: String?, i2: Int, z9: Boolean) {
-    }
-
-    override fun onRepeatAudio() {
-
-    }
-
-    override fun onStopAudio() {
-
-    }
-
-//    override fun onTemplateSelectedListener(
-//        i2: Int,
-//        i9: Int,
-//        template: Template?,
-//        templateItem: TemplateItem?
-//    ) {
-//    }
-
-//    override fun updateNewTemplate(template: Template?, i2: Int) {
-////        this.onTemplateAdapterListener.updateNewTemplate(template, i2);
-//    }
 
     companion object {
         val diffCallbackTheme = object : DiffUtil.ItemCallback<Category>() {
@@ -373,8 +252,5 @@ class CategoryTemplateAdapter :
                 return bVar == bVar2
             }
         }
-    }
-
-    override fun onDesignSelectedListener(i2: Int, i9: Int, item: DesignItem) {
     }
 }
